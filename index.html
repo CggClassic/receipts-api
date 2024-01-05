@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Recipe Form</h2>
+
+<form id="recipeForm" action="/recipe" method="get">
+    <label for="classname">Class Name:</label>
+    <input type="text" id="classname" name="classname" required>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="first_ingredient">First Ingredient:</label>
+    <input type="text" id="first_ingredient" name="first_ingredient" required>
+
+    <label for="second_ingredient">Second Ingredient:</label>
+    <input type="text" id="second_ingredient" name="second_ingredient" required>
+
+    <label for="result">Result:</label>
+    <input type="text" id="result" name="result" required>
+
+    <button type="submit">Submit Recipe</button>
+</form>
+
+<script>
+    document.getElementById('recipeForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // You can add any additional logic here before submitting the form
+
+        this.submit(); // Submit the form
+    });
+</script>
+
+</body>
+</html>
