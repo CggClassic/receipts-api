@@ -112,7 +112,7 @@ func main() {
 
 	// Serve the HTML file
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "index.html")
+		http.ServeFile(w, r, "/app/index.html")
 	})
 	// Start the server on port 8080
 	http.ListenAndServe(":8080", nil)
