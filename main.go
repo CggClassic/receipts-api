@@ -111,8 +111,9 @@ func main() {
 	http.HandleFunc("/recipe", recipeHandler)
 
 	// Serve the HTML file
-	http.Handle("/", http.FileServer(http.Dir(".")))
-
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "index.html")
+	})
 	// Start the server on port 8080
 	http.ListenAndServe(":8080", nil)
 }
